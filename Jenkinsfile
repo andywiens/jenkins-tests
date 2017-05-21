@@ -6,5 +6,24 @@ pipeline {
                 sh 'ruby --version'
             }
         }
+        stage('test') {
+            steps {
+                sh 'uname -r'
+                sh 'echo "hello andy"'
+            }
+        }
+    }
+    post {
+        always {
+            echo "well... we're finished"
+        }
+
+        success {
+            echo "wooohooooo!!"
+        }
+
+        failure {
+            echo "fuck"
+        }
     }
 }
