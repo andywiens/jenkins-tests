@@ -6,6 +6,11 @@ pipeline {
                 sh 'ruby --version'
             }
         }
+        stage("sanity") {
+            steps {
+                input "are we ready?"
+            }
+        }
         stage('test') {
             steps {
                 sh 'uname -r'
